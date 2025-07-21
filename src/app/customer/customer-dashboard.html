@@ -1,0 +1,75 @@
+<h2>Welcome, Customer!</h2>
+
+<nav>
+  <button (click)="view = 'services'">View Services</button>
+  <button (click)="view = 'appointments'">My Appointments</button>
+</nav>
+
+<!-- SERVICES SECTION -->
+<div *ngIf="view === 'services'">
+  <h3 style="margin-top: 2rem;">Book an Appointment</h3>
+  <form (ngSubmit)="addAppointment()" #form="ngForm">
+    <select [(ngModel)]="newAppointment.service" name="service" required>
+      <option value="" disabled selected>Select service</option>
+      <option *ngFor="let s of services" [value]="s.name">{{ s.name }}</option>
+    </select>
+    <input type="date" [(ngModel)]="newAppointment.date" name="date" required />
+    <input type="time" [(ngModel)]="newAppointment.time" name="time" required />
+    <button type="submit" [disabled]="!form.form.valid">Book</button>
+  </form>
+
+  <h3>Available Services</h3>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    placeholder="Search services..."
+    style="margin-bottom: 1rem; padding: 0.5rem; border-radius: 4px; border: none;"
+  >
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price (SAR)</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services | filterServices: filterText">
+        <td>{{ service.name }}</td>
+        <td>{{ service.price }}</td>
+        <td><button (click)="viewServiceDetails(service)">View Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="showDetails && selectedService" class="service-details" style="margin-top: 2rem;">
+    <h4>Service Details</h4>
+    <p><strong>Name:</strong> {{ selectedService.name }}</p>
+    <p><strong>Category:</strong> {{ selectedService.category }}</p>
+    <p><strong>Description:</strong> {{ selectedService.description }}</p>
+    <p><strong>Price:</strong> {{ selectedService.price }} SAR</p>
+    <button (click)="showDetails = false">Close</button>
+  </div>
+</div>
+
+<!-- APPOINTMENTS SECTION -->
+<div *ngIf="view === 'appointments'">
+  <h3>My Appointments</h3>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of appointments">
+        <td>{{ a.service }}</td>
+        <td>{{ a.date }}</td>
+        <td>{{ a.time }}</td>
+        <td>{{ a.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

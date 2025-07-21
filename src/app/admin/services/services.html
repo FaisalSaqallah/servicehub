@@ -1,0 +1,30 @@
+<!-- admin-services.component.html
+<h3>Services</h3>
+
+<form (ngSubmit)="addService()" #serviceForm="ngForm">
+  <input type="text" name="name" [(ngModel)]="newService.name" placeholder="Service Name" required>
+  <input type="number" name="price" [(ngModel)]="newService.price" placeholder="Price (SAR)" required>
+  <button type="submit" [disabled]="!serviceForm.valid">Add</button>
+</form>
+
+<table class="info-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="services.length === 0">
+      <td colspan="3">No services available.</td>
+    </tr>
+    <tr *ngFor="let service of services; let i = index">
+      <td>{{ service.name }}</td>
+      <td>{{ service.price }} SAR</td>
+      <td>
+        <button (click)="deleteService(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->

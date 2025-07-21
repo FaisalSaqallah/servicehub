@@ -1,0 +1,32 @@
+<!-- <h3>Appointments</h3>
+
+<form (ngSubmit)="addAppointment()" #appointmentForm="ngForm">
+  <input type="text" name="customer" [(ngModel)]="newAppointment.customer" placeholder="Customer Name" required>
+  <input type="text" name="service" [(ngModel)]="newAppointment.service" placeholder="Service" required>
+  <input type="date" name="date" [(ngModel)]="newAppointment.date" required>
+  <button type="submit" [disabled]="!appointmentForm.valid">Add</button>
+</form>
+
+<table class="info-table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Service</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="appointments.length === 0">
+      <td colspan="4">No appointments available.</td>
+    </tr>
+    <tr *ngFor="let appt of appointments; let i = index">
+      <td>{{ appt.customer }}</td>
+      <td>{{ appt.service }}</td>
+      <td>{{ appt.date }}</td>
+      <td>
+        <button (click)="deleteAppointment(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->

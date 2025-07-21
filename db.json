@@ -1,0 +1,12 @@
+{
+  "services": [
+    { "id": 1, "name": "Haircut", "description": "Professional haircut", "category": "Hair", "price": 50 },
+    { "id": 2, "name": "Beard Trim", "description": "Trim and shape your beard", "category": "Beard", "price": 30 }
+  ],
+  "customers": [
+    { "id": 1, "name": "Ali", "email": "ali@example.com", "phone": "0555555555", "status": "Active" }
+  ],
+  "appointments": [
+    { "id": 1, "customer": "Ali", "service": "Haircut", "date": "2025-07-25", "time": "14:00", "status": "Pending" }
+  ]
+}

@@ -1,0 +1,29 @@
+<!-- <h3>Customers</h3>
+
+<form (ngSubmit)="addCustomer()" #customerForm="ngForm">
+  <input type="text" name="name" [(ngModel)]="newCustomer.name" placeholder="Customer Name" required>
+  <input type="email" name="email" [(ngModel)]="newCustomer.email" placeholder="Email" required>
+  <button type="submit" [disabled]="!customerForm.valid">Add</button>
+</form>
+
+<table class="info-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="customers.length === 0">
+      <td colspan="3">No customers found.</td>
+    </tr>
+    <tr *ngFor="let customer of customers; let i = index">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>
+        <button (click)="deleteCustomer(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->

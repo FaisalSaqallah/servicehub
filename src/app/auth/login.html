@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <h2>Login</h2>
+
+  <label>Email</label>
+  <input type="email" formControlName="email" />
+
+  <label>Password</label>
+  <input type="password" formControlName="password" />
+
+  <button type="submit">Login</button>
+
+  <div *ngIf="loginError" class="error">Invalid credentials</div>
+</form>

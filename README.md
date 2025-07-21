@@ -1,64 +1,87 @@
 # ServiceHub - Admin & Customer Management Panel
 
-An Angular Single Page Application (SPA) that allows administrators to manage services, customers, and appointments. Customers can view services and request appointments.
+A Single Page Application (SPA) built with Angular that allows administrators to manage services, customers, and appointments, while customers can browse services and request appointments.
 
 ---
 
-## Authentication
+##  Mocked Authentication
 
-- Login roles: **admin** & **customer** (mocked credentials)
-- JWT-based (mock allowed)
-- Route protection using **AuthGuard**
+Authentication is mocked and protected using Angular Route Guards.
 
 ---
 
-## Admin Features
+##  Setup Instructions
 
-- Dashboard with topbar navigation
-- **Manage Services**: CRUD (name, description, price, category)
-- **Manage Customers**: CRUD (name, email, phone, status)
-- **Manage Appointments**: View & update status (Pending, Approved, Completed, Rejected)
-- Reactive Forms with validation
+1. **Clone the repository**
 
----
+git clone https://github.com/FaisalSaqallah/servicehub.git
+cd servicehub
 
-## Customer Features
+2. **Install dependencies**
 
-- Dashboard to browse & filter services
-- Service detail view
-- Book appointments with date & time
-- View appointment history with statuses
-
----
-
-## API Layer
-
-- Powered by `json-server`
-- Data stored in `db.json`
-
-### API Endpoints
-
-| Entity        | Endpoint                     |
-|---------------|------------------------------|
-| Services      | `http://localhost:3000/services` |
-| Customers     | `http://localhost:3000/customers` |
-| Appointments  | `http://localhost:3000/appointments` |
-
----
-
-## Technical Stack
-
-- Angular 16+
-- Standalone Components & Lazy-loaded Modules
-- SCSS Styling
-- Custom service-based state management
-- Route Guards for role-based access
-
----
-
-## Setup Instructions
-
-1. **Install dependencies**
-
-```bash
 npm install
+
+3. **Start the Angular app**
+
+ng serve
+
+4. **Run json-server (mock API)**
+
+npm run json-server
+
+---
+
+## 🌐API Endpoints (json-server)
+
+These endpoints are served via `http://localhost:3000`
+
+### Services
+- GET /services — list all services
+- POST /services — add new service
+- PUT /services/:id — update a service
+- DELETE /services/:id — delete a service
+
+### Customers
+- GET /customers — list all customers
+- POST /customers — add new customer
+- PUT /customers/:id — update customer info
+- DELETE /customers/:id — remove a customer
+
+### Appointments
+- GET /appointments — list all appointments
+- POST /appointments — book a new appointment
+- PUT /appointments/:id — update appointment status or info
+- DELETE /appointments/:id — cancel/delete an appointment
+
+---
+
+## Features Implemented
+
+### Admin
+- Dashboard with styled navigation bar
+- Manage services with full CRUD (Reactive Forms)
+- Manage customers with full CRUD (Reactive Forms)
+- Manage appointments and update their status
+- All data integrated via json-server API
+
+### Customer
+- View services and their details
+- Filter and search services (if implemented)
+- Book appointments (date + time)
+- View appointment history with status
+
+---
+
+##  Tech Stack
+
+- Angular 16 (Standalone Components)
+- SCSS for styling
+- json-server (mock backend)
+- Reactive Forms
+- Route Guards for auth
+
+---
+
+##  Author
+
+Made by **Faisal Saqallah** for the Senior Angular Frontend Developer Challenge.
